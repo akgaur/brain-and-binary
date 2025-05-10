@@ -5,7 +5,7 @@
 
 public class NumberOfSetBits
 {
-    public int NumSetBits(int A) {
+    public int GetNumberOfSetBit(int A) {
         int count = 0;
         while (A != 0) {
             count += (A & 1);

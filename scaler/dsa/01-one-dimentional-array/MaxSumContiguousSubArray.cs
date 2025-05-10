@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 
-public class Solution {
+public class MaxSumContiguousSubArray {
     public int MaxSubArray(List<int> A) {
         int arrLen = A.Count;
         int[] result = new int[arrLen];

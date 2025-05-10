@@ -13,7 +13,7 @@ namespace Dsa
             int[] heights = {0,1,0,2,1,0,1,3,2,1,2,1};
             Console.WriteLine("RainWaterTrapped: " + rainWater.Trap(heights));
 
-            var maxSum = new Solution();
+            var maxSum = new MaxSumContiguousSubArray();
             List<int> list = new List<int> {-2, 1, -3, 4, -1, 2, 1, -5, 4};
             Console.WriteLine("MaxSumContiguousSubArray: " + maxSum.MaxSubArray(list));
 
@@ -29,7 +29,7 @@ namespace Dsa
 
             var numBits = new NumberOfSetBits();
             int num = 11; // binary 1011
-            Console.WriteLine("NumberOf1Bit: " + numBits.NumSetBits(num));
+            Console.WriteLine("NumberOf1Bit: " + numBits.GetNumberOfSetBit(num));
         }
     }
 }
