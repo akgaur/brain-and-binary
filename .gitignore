@@ -1,0 +1,69 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Oo]ut/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+
+# NuGet
+*.nupkg
+**/packages/*
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.rsuser
+*.sln.iml
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resources
+Resources/*
+!Resources/*.md
+!Resources/*.json
+!Resources/*.xml
+!Resources/README.md
+
+# Exclude specific resource types
+Resources/**/*.exe
+Resources/**/*.dll
+Resources/**/*.pdb
+Resources/temp/
+Resources/cache/
