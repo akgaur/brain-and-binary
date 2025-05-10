@@ -4,6 +4,6 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Brain and Binary - DSA Practice");
+        Console.WriteLine("Brain and Binary 3 - DSA Practice");
     }
 }
