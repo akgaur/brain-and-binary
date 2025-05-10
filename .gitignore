@@ -1,6 +1,6 @@
 # Build results
-[Bb]in/
-[Oo]bj/
+bin/
+obj/
 [Dd]ebug/
 [Rr]elease/
 [Oo]ut/
@@ -24,6 +24,7 @@
 *.log
 *.lib
 *.sbr
+*.userprefs
 
 # IDE files
 .idea/
@@ -55,7 +56,10 @@ project.fragment.lock.json
 artifacts/
 
 # Resources
-Resources/*
+!Resources/
+Assets/
+Content/
+*.resx
 !Resources/*.md
 !Resources/*.json
 !Resources/*.xml
@@ -67,3 +71,7 @@ Resources/**/*.dll
 Resources/**/*.pdb
 Resources/temp/
 Resources/cache/
+
+# Misc
+*.tmp
+*~
