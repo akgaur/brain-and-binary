@@ -9,10 +9,10 @@ Approch
 
 public class SingleNumber {
 
-    public int singleNumber(final int[] A) {
+    public int singleNumber(int[] A) {
         
         int ans = A[0];
-        for(int i=1; i<A.length; i++){
+        for(int i=1; i<A.Length; i++){
             ans = ans ^ A[i];
         }
         return ans;

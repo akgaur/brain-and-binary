@@ -3,7 +3,8 @@
  *Write a function that takes an integer and returns the number of 1 bits present in its binary representation.
 */
 
-public class Solution {
+public class NumberOfSetBits
+{
     public int NumSetBits(int A) {
         int count = 0;
         while (A != 0) {

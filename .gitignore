@@ -1,2 +1,24 @@
-# Ignore all class files
-*.class
+# Ignore build results
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs
+
+# Ignore Rider project files
+.idea/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore test results
+TestResults/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
