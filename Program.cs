@@ -1,9 +1,12 @@
+using BrainAndBinary.problems.one_dimentional_array;
+
 namespace BrainAndBinary;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Brain and Binary 3 - DSA Practice");
+        var maxNonNegativeSubArray = new MaxNonNegativeSubArray();
+        maxNonNegativeSubArray.TestMaxNonNegativeSubArray();
     }
 }
