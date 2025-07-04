@@ -4,20 +4,20 @@
 **What is prefix sum** 
 A **prefix sum** is an array where each element at index `i` stores the sum of all elements from index `0` to `i` in the original array.
 
-	**Example:**
-	```text
-	Original:   [2, 4, 6, 8]
-	Prefix Sum: [2, 6, 12, 20] → (2, 2+4, 2+4+6, 2+4+6+8)
-	```
+**Example:**
+```text
+Original:   [2, 4, 6, 8]
+Prefix Sum: [2, 6, 12, 20] → (2, 2+4, 2+4+6, 2+4+6+8)
+```
 **What is sufix sum**
 		
-	A **suffix sum** is an array where each element at index `i` holds the sum of all elements from index `i` to the end of the original array.
-	
-	**Example:**
-	```text
-	Original Array:    [2, 4, 6, 8]
-	Suffix Sum Array:  [20, 18, 14, 8]
-	```
+A **suffix sum** is an array where each element at index `i` holds the sum of all elements from index `i` to the end of the original array.
+
+**Example:**
+```text
+Original Array:    [2, 4, 6, 8]
+Suffix Sum Array:  [20, 18, 14, 8]
+```
 
 ## Question1. Given an array, does it contain an equilibrium point? Equilibrium: The sum of elements to the left of it is equal to the sum of elements to the right of it.
 
