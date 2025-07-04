@@ -13,7 +13,7 @@ A **prefix sum** is an array where each element at index `i` stores the sum of a
 		
 	A **suffix sum** is an array where each element at index `i` holds the sum of all elements from index `i` to the end of the original array.
 	
-	** Example:**
+	**Example:**
 	```text
 	Original Array:    [2, 4, 6, 8]
 	Suffix Sum Array:  [20, 18, 14, 8]
@@ -28,7 +28,7 @@ A **prefix sum** is an array where each element at index `i` stores the sum of a
 	Given an array of integers, create prefix array and check if there exists an **equilibrium point** —  
 an index where the sum of all elements before it is equal to the sum of all elements after it.
 
-** 🔸 Approach **
+**🔸 Approach**
 
 1. Create a **prefix sum array**.
 2. Loop through the original array.
@@ -39,7 +39,7 @@ an index where the sum of all elements before it is equal to the sum of all elem
 5. If no such index exists → return false.
 
 
-** 🔸 Code (in C#)**
+**🔸 Code (in C#)**
 
 ```csharp
 public bool HasEquilibriumPoint(int[] arr)
