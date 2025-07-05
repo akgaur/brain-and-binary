@@ -2,9 +2,16 @@
 
 ## 1. 📘 Definition & Structure
 - What is a matrix?
+`A **matrix** is a rectangular arrangement of numbers, symbols, or expressions, organized in **rows** and **columns**. It is widely used in mathematics, computer science, physics, and engineering for various applications such as data representation, linear equations, transformations, etc.
+`
+
 - Rows and columns
+ `**Rows** are horizontal lines in the matrix.`
+ `**Columns** are vertical lines in the matrix.`
 - Notation: `matrix[i][j]`
 - Square vs. rectangular matrix
+	`Number of rows = Number of columns (e.g., 3×3, 4×4)`
+	`Special types: Identity matrix, diagonal matrix, etc.`
 
 ---
 
