@@ -1,17 +1,24 @@
 # 🧠 Basic Topics in 2D Matrix
 
 ## 1. 📘 Definition & Structure
-- What is a matrix?
-`A **matrix** is a rectangular arrangement of numbers, symbols, or expressions, organized in **rows** and **columns**. It is widely used in mathematics, computer science, physics, and engineering for various applications such as data representation, linear equations, transformations, etc.
-`
+### 🔹 What is a Matrix?
+A **matrix** is a rectangular arrangement of numbers, symbols, or expressions, organized in **rows** and **columns**. It is widely used in mathematics, computer science, physics, and engineering for various applications such as data representation, solving linear equations, transformations, etc.
 
-- Rows and columns
- `**Rows** are horizontal lines in the matrix.`
- `**Columns** are vertical lines in the matrix.`
-- Notation: `matrix[i][j]`
-- Square vs. rectangular matrix
-	`Number of rows = Number of columns (e.g., 3×3, 4×4)`
-	`Special types: Identity matrix, diagonal matrix, etc.`
+### 🔹 Rows and Columns
+- **Rows** are horizontal lines in the matrix.  
+- **Columns** are vertical lines in the matrix.
+
+### 🔹 Notation
+- The typical way to refer to an element in a matrix is using `matrix[i][j]`, where:
+  - `i` is the row index  
+  - `j` is the column index
+
+### 🔹 Square vs. Rectangular Matrix
+- A **square matrix** has the same number of rows and columns (e.g., 3×3, 4×4).
+- A **rectangular matrix** has a different number of rows and columns (e.g., 2×3, 3×4).
+- Special types of square matrices:
+  - **Identity matrix**
+  - **Diagonal matrix**
 
 ---
 
