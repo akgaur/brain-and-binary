@@ -155,3 +155,16 @@ public static string ReverseWords(string s)
 *   **Language-specific mutable alternatives** exist for performance-critical operations
 *   **ASCII knowledge is crucial** for character manipulation tasks
 *   **Efficient string algorithms** often use techniques like counting sort and two-pointer reversal
+
+--
+# Practice Questions based on string
+## ❓ Question 1: Reverse Words in a String
+
+**Problem**: Reverse the string word by word without leading/trailing spaces and with single spaces between words
+
+### Approach:
+1.  Reverse the entire string
+2.  Reverse each word individually
+3.  Handle spaces appropriately
+
+### Solution:
