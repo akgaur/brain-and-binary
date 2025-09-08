@@ -95,14 +95,31 @@ Code here
 Code here 
 ```
 # Question: Cunduct a binary number of given x number of set bits and y number of unset bit
-- (x set bits y setbits)
+- (x set bits y unset bits)
 
-### 💡 Solution Optimised Approach:
- -
+### 💡 Solution Approach: using loop
+ -create nuber with 0 and then create using 1
 
 ```csharp
 Code here 
 ```
+
+### 💡 Solution Optimised Approach: using gp 
+ - as the number which it will for in binary is gp
+
+```csharp
+Code here 
+```
+
+### 💡 Solution Optimised Approach:
+ -using right shift 
+
+```csharp
+main logic code => (i<<x - 1)<<y
+```
+# what are the edge cases to look into 
+- 
+
 #  Question: can we get the bit value that is getting deropped by left shift or right shift
 
 For a Right Shift (>>)
@@ -121,3 +138,21 @@ For a Left Shift (<<)
     Perform the left shift operation, which will discard the bits that are now known.
 
 # Question : Give two binary stirng perform addition of binary string and return decimal number
+
+### 💡 Solution Optimised Approach:
+ -
+
+```csharp
+Code here 
+```
+#  Question: Given number A find the number x wihch results minimal output when we xor A^X = minimum
+
+### 💡 Solution Optimised Approach:
+ -
+
+```csharp
+Code here 
+```
+
+## Note: xor is way to count the number of exclusivity contribution of ones
+
