@@ -1,158 +1,167 @@
 --------------- Format to be used 
-# Intermediate DSA: Introduction to Arrays
+# Intermediate DSA: Bit Manipulation
 
-## 📌 Basic Properties of Arrays
+## 📌 What is a Number System?
+- A number system defines how numbers are represented using digits and a base.
+- Common systems: **Binary (base 2)**, **Octal (base 8)**, **Decimal (base 10)**, **Hexadecimal (base 16)**.
+- Conversion between bases is a frequent interview topic.
 
-- **Fixed Size** – Size is defined at creation and cannot change.
-- **Same Data Type** – All elements must be of the same type.
-- **Index-Based Access** – Access elements using 0-based indexing.
-- **Contiguous Memory** – Elements are stored in continuous memory locations.
-- **Fast Access, Slow Insert/Delete** – Access is fast (O(1)); insert/delete is slow (O(n)).
+### 🔄 Example: Convert Binary to Decimal
+```csharp
+string binary = "1011";
+int decimalValue = Convert.ToInt32(binary, 2); // Output: 11
+```
 
 ---
 
-## ✅ Question 1: Write a piece of code to print all elements of an array
+## 📝 Notes
+- XOR is useful for finding unique elements and toggling bits.
+- Bit manipulation is efficient for low-level operations and interview questions.
+---
+
+## 📌 Bitwise Operators
+- **AND (&)**: Sets each bit to 1 if both bits are 1.
+- **OR (|)**: Sets each bit to 1 if one of two bits is 1.
+- **XOR (^)**: Sets each bit to 1 if only one of two bits is 1.
+- **NOT (~)**: Inverts all the bits.
+- **Left Shift (<<)**: Shifts bits to the left, adds zeros on the right.
+- **Right Shift (>>)**: Shifts bits to the right, drops bits on the right.
+
+---
+
+## ✅ Question 1: Find the Number Occurring Odd Number of Times
+Given an array where every number appears an even number of times except one, find that number.
+
+### 💡 Solution:
+- XOR all elements. The result is the odd-occurring number.
+
+```csharp
+int FindOdd(int[] arr)
+{
+    int res = 0;
+    foreach (var num in arr)
+        res ^= num;
+    return res;
+}
+```
+
+---
+
+## ✅ Question 2: Check if a Bit is Set or Unset
+Given a number `n` and position `i`, check if the bit at position `i` is set (1) or unset (0).
+
+### 💡 Solution:
+- Use left shift and bitwise AND.
+
+```csharp
+bool IsBitSet(int n, int i)
+{
+    return (n & (1 << i)) != 0;
+}
+```
+Or using right shift:
+```csharp
+bool IsBitSet(int n, int i)
+{
+    return ((n >> i) & 1) == 1;
+}
+```
+
+---
+
+## ✅ Question 3: Toggle a Bit at Position i
+Given number `n` and position `i`, toggle the bit at position `i`.
+
+### 💡 Solution:
+- Use XOR with a mask.
+
+```csharp
+int ToggleBit(int n, int i)
+{
+    return n ^ (1 << i);
+}
+```
+
+---
+
+## ✅ Question 4: Toggle All Bits Starting from Rightmost Set Bit
+Given number `n`, toggle all bits from the rightmost set bit.
+
+### 💡 Solution:
+- Find rightmost set bit and toggle all bits from there.
+
+```csharp
+int ToggleFromRightmostSetBit(int n)
+{
+    int mask = n & -n; // Isolate rightmost set bit
+    return n ^ ((mask << 1) - 1);
+}
+```
+
+---
+
+## ✅ Question 5: Construct a Binary Number with x Set Bits and y Unset Bits
+Create a number with `x` set bits followed by `y` unset bits.
+
+### 💡 Solution:
+- Use left shift and subtraction.
+
+```csharp
+int ConstructNumber(int x, int y)
+{
+    return ((1 << x) - 1) << y;
+}
+```
+
+---
+
+## ✅ Question 6: Get Bit Dropped by Shift
+Find the bit value that is dropped when shifting left or right.
+
+### 💡 Solution:
+- **Right Shift:** Use modulus operator to get LSB.
+- **Left Shift:** Use bitmask to get MSB.
+
+```csharp
+int DroppedRightBit(int n)
+{
+    return n % 2;
+}
+int DroppedLeftBit(int n, int bitLength, int shift)
+{
+    int mask = ((1 << shift) - 1) << (bitLength - shift);
+    return (n & mask) >> (bitLength - shift);
+}
+```
+
+---
+
+## ✅ Question 7: Add Two Binary Strings and Return Decimal
+Given two binary strings, add them and return the decimal result.
 
 ### 💡 Solution:
 
 ```csharp
-int[] numbers = { 10, 20, 30, 40, 50 };
-foreach (var num in numbers)
-	Console.WriteLine(num);
+int AddBinaryStrings(string a, string b)
+{
+    int num1 = Convert.ToInt32(a, 2);
+    int num2 = Convert.ToInt32(b, 2);
+    return num1 + num2;
+}
 ```
-reove after document prep
----------------------
 
+---
 
-# Overview of number system
-- what is number system, base of a number system
-- octal, decimal, hexadecimal, binary number system
-- conversion of a number from one base to another base
-- Convert binary to decimal, decimal to hexadecimal, and other
-
-# Binary number system
--------------------
-- Bitwise operatin and, or, xor.
-- xor importent and its properties 
-- set bit short code in c#
-- unset bit short code in c#
-- is set Bit short code in c#
-
-
-## ✅ Question 1: Given an array of intergers where every number is present even number of times but one number is present odd number of times, find the number 
+## ✅ Question 8: Find x such that A ^ x is Minimum
+Given number `A`, find `x` such that `A ^ x` is minimized.
 
 ### 💡 Solution:
- - Take xor of each element of array and return the result
- - as x^x gives 0, and 0 ^ x gives x, 
+- The minimum is achieved when `x = A` (since `A ^ A = 0`).
 
 ```csharp
-Code here
+int MinXor(int A)
+{
+    return A;
+}
 ```
-
-
-
-
-## ✅ Question 2: Given an array of intergers where every number is present even number of times but one number is present odd number of times, find the number 
-
-### 💡 Solution Optimised Approach:
- - Take xor of each element of array and return the result
- - as x^x gives 0, and 0 ^ x gives x, 
-
-```csharp
-Code here
-```
-
-# Left shift and right shift
-- left shift(<<) and right shift( >>) how does it work ? 
-
-# Question: Check if bit is set or unset using left shift
-
-### 💡 Solution Optimised Approach:
- - take left shift of one and then take and 
- - if it gives 0 then it set otherwise it is unset 
- - add multple sollution in short and clean and keep main logic
-
-```csharp
-Code here = (1<<i & num) == 0 ? unset : set  
-or n >> i & 1 == 1 ? return set: unset;
-```
-
-# Question: Given number n and position i toggle a bit of a number at given position i
-
-### 💡 Solution Optimised Approach:
- -
-
-```csharp
-Code here 
-```
-
-# Question: Given number n toggle all the bits starting from right most set bit.
-
-### 💡 Solution Optimised Approach:
- -
-
-```csharp
-Code here 
-```
-# Question: Cunduct a binary number of given x number of set bits and y number of unset bit
-- (x set bits y unset bits)
-
-### 💡 Solution Approach: using loop
- -create nuber with 0 and then create using 1
-
-```csharp
-Code here 
-```
-
-### 💡 Solution Optimised Approach: using gp 
- - as the number which it will for in binary is gp
-
-```csharp
-Code here 
-```
-
-### 💡 Solution Optimised Approach:
- -using right shift 
-
-```csharp
-main logic code => (i<<x - 1)<<y
-```
-# what are the edge cases to look into 
-- 
-
-#  Question: can we get the bit value that is getting deropped by left shift or right shift
-
-For a Right Shift (>>)
-
-    Use the modulus operator: To find the least significant bit (LSB) that gets shifted out, you can use the modulus operator with 2 (number % 2). This gives you 1 if the LSB was 1 and 0 if it was 0. 
-
-Perform the shift: Then, perform the right shift to move the bits to the right. 
-
-For a Left Shift (<<) 
-
-    1. Create a bitmask:
-    Create a bitmask that has a 1 in the most significant bit (MSB) positions that will be shifted off. For example, if you have an 8-bit number and you shift left by 2, you'd create a mask of 11000000 in binary.
-    2. Use the bitwise AND operator:
-    Perform a bitwise AND operation between the original number and the bitmask (number & mask). This will isolate the bits that are about to be dropped.
-    3. Perform the shift:
-    Perform the left shift operation, which will discard the bits that are now known.
-
-# Question : Give two binary stirng perform addition of binary string and return decimal number
-
-### 💡 Solution Optimised Approach:
- -
-
-```csharp
-Code here 
-```
-#  Question: Given number A find the number x wihch results minimal output when we xor A^X = minimum
-
-### 💡 Solution Optimised Approach:
- -
-
-```csharp
-Code here 
-```
-
-## Note: xor is way to count the number of exclusivity contribution of ones
 
