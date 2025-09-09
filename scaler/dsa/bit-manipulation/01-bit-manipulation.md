@@ -1,4 +1,3 @@
---------------- Format to be used 
 # Intermediate DSA: Bit Manipulation
 
 ## 📌 What is a Number System?
@@ -9,7 +8,16 @@
 ### 🔄 Example: Convert Binary to Decimal
 ```csharp
 string binary = "1011";
-int decimalValue = Convert.ToInt32(binary, 2); // Output: 11
+int BinaryToDecimal(string binary)
+{
+    int result = 0;
+    int baseValue = 2; // binary base
+
+    for (int i = 0; i < binary.Length; i++)
+        result = result * baseValue + (binary[i] - '0');
+
+    return result;
+}
 ```
 
 ---
@@ -36,7 +44,7 @@ Given an array where every number appears an even number of times except one, fi
 - XOR all elements. The result is the odd-occurring number.
 
 ```csharp
-int FindOdd(int[] arr)
+int FindOddOneOut(int[] arr)
 {
     int res = 0;
     foreach (var num in arr)
