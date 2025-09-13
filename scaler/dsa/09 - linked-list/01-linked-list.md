@@ -1,5 +1,7 @@
 # Linked Lists: Introduction & Key Concepts
 
+---
+
 ## Overview
 A linked list is a linear data structure where each node points to the next node. It supports dynamic size and efficient insert/delete operations compared to arrays.
 
@@ -12,43 +14,16 @@ A linked list is a linear data structure where each node points to the next node
 
 ---
 
-# Working of ArrayList
+## ArrayList vs Linked List
 
-## 🔹 Introduction
-- An **ArrayList** is a **resizable array implementation** of the `List` interface.  
-- Unlike arrays, it can **grow and shrink dynamically**.  
-- Provides **random access** like arrays, but with flexible size management.
+### ArrayList
+- Resizable array implementation of the `List` interface.
+- Grows and shrinks dynamically.
+- Provides random access (O(1)), but resizing is costly (O(N)).
+- Internally uses a dynamic array with default capacity (e.g., 10 in Java).
+- When full, creates a larger array and copies elements.
 
----
-
-## 🔹 Internal Working
-1. **Backed by Array**  
-   - Internally uses a **dynamic array**.  
-   - When created, it has a **default capacity** (e.g., 10 in Java).  
-
-2. **Adding Elements**  
-   - Elements are stored in the internal array.  
-   - If array is **not full**, element is placed at the next index.  
-   - If array is **full**, a **new larger array** is created (usually 1.5x or 2x bigger), and old elements are copied.
-
-3. **Accessing Elements**  
-   - Provides **O(1)** time complexity for random access using index.  
-
-4. **Resizing Mechanism**  
-   - Old array elements are copied into a new, larger array.  
-   - This resizing makes occasional insertions costly (O(N)), but **amortized time is O(1)**.
-
----
-
-## Arrays vs Linked List
-
-**Arrays**
-- Contiguous memory allocation.
-- Direct/random access using index.
-- Size must be predefined.
-- Resizing is costly (copying elements).
-
-**Linked List**
+### Linked List
 - Non-contiguous memory allocation.
 - Nodes connected via pointers.
 - No need for predefined size.
@@ -84,7 +59,7 @@ public class Node
 
 ## Operations on Linked List
 
-### 1. Find Length of Linked List, given input is haad of LL.
+### 1. Find Length of Linked List
 Traverse the list and count nodes.
 
 **C# Code:**
@@ -105,7 +80,7 @@ public int GetLength(Node head)
 
 ---
 
-### 2. Insert at Front, given input is haad of LL.
+### 2. Insert at Front
 Create a new node, point its next to current head, update head.
 
 **C# Code:**
@@ -121,7 +96,7 @@ public Node InsertFront(Node head, int val)
 
 ---
 
-### 3. Insert at End, given input is haad of LL.
+### 3. Insert at End
 Traverse to last node, add new node at the end.
 
 **C# Code:**
@@ -152,7 +127,7 @@ public Node InsertEndWithTail(Node tail, int val)
 
 ---
 
-### 4. Insert at Given Position, given input is haad of LL and pos k.
+### 4. Insert at Given Position
 Traverse to node before position, adjust pointers.
 
 **C# Code:**
@@ -205,6 +180,24 @@ public Node DeleteEnd(Node head)
 }
 // Time: O(N), Space: O(1)
 ```
+
+---
+
+### 7. Delete a Given Node (not last node)
+Copy data from next node to current node, point current node’s next to next.next.
+
+**C# Code:**
+```csharp
+public void DeleteGivenNode(Node node)
+{
+    if (node == null || node.next == null) return;
+    node.data = node.next.data;
+    node.next = node.next.next;
+}
+// Time: O(1), Space: O(1)
+```
+
+---
 
 ## Complexity Overview
 - **Access (Random):** O(N)

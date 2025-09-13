@@ -1,11 +1,13 @@
 # Recursion: Introduction & Key Concepts
 
+---
+
 ## Overview
 Recursion is a technique where a function calls itself to solve subproblems. It is widely used in divide & conquer algorithms, tree/graph traversals, and backtracking.
 
 ---
 
-## Key Concepts/ 3 Steps of Recusrion
+## Key Concepts (3 Steps of Recursion)
 - **Base Case**: Prevents infinite recursion by providing a stopping condition.
 - **Stack Overflow**: Occurs if recursion is too deep or lacks a base case.
 - **Tail Recursion**: Recursive call is the last operation in the function.
@@ -29,7 +31,6 @@ Recursion is a function calling itself to solve a problem using smaller instance
 ---
 
 ### Example 1: Sum of N Natural Numbers
-
 **Problem:** Find sum of first `N` natural numbers.
 
 **Steps:**
@@ -51,7 +52,6 @@ public int Sum(int N)
 ---
 
 ### Example 2: Factorial
-
 **Problem:** Find factorial of `N`.
 
 **Steps:**
@@ -74,7 +74,6 @@ public int Fact(int N)
 ---
 
 ### Example 3: Fibonacci
-
 **Problem:** Find Nth Fibonacci number.
 
 **Sequence:** 0, 1, 1, 2, 3, 5, 8, 13, ...
@@ -98,7 +97,6 @@ public int Fib(int N)
 ---
 
 ### Example 4: File System Search
-
 **Problem:** Check if a file exists in a directory structure.
 
 **Steps:**
