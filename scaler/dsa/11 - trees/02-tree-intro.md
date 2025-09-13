@@ -17,8 +17,10 @@
 
 ## 1. Tree Traversals
 
-### 🔹 Preorder (Root → Left → Right)
-**C# Code:**
+### Preorder Traversal (Root → Left → Right)
+Traverse the root node first, then the left subtree, followed by the right subtree.
+
+**C# Implementation:**
 ```csharp
 void Preorder(TreeNode root)
 {
@@ -27,11 +29,14 @@ void Preorder(TreeNode root)
     Preorder(root.left);
     Preorder(root.right);
 }
-// Time: O(N), Space: O(N) (recursion stack)
+// Time Complexity: O(N)
+// Space Complexity: O(N) due to recursion stack
 ```
 
-### 🔹 Inorder (Left → Root → Right)
-**C# Code:**
+### Inorder Traversal (Left → Root → Right)
+Visit the left subtree, then the root node, and finally the right subtree.
+
+**C# Implementation:**
 ```csharp
 void Inorder(TreeNode root)
 {
@@ -40,11 +45,14 @@ void Inorder(TreeNode root)
     Console.Write(root.data + " ");
     Inorder(root.right);
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
 
-### 🔹 Postorder (Left → Right → Root)
-**C# Code:**
+### Postorder Traversal (Left → Right → Root)
+Process the left subtree, then the right subtree, and finally the root node.
+
+**C# Implementation:**
 ```csharp
 void Postorder(TreeNode root)
 {
@@ -53,23 +61,24 @@ void Postorder(TreeNode root)
     Postorder(root.right);
     Console.Write(root.data + " ");
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
 
-**Example Output (for tree 1–7):**
+**Sample Outputs (for tree 1–7):**
 - Inorder: `4 2 5 1 6 3 7`
 - Preorder: `1 2 4 5 3 6 7`
 - Postorder: `4 5 2 6 7 3 1`
 
-### 🔹 Iterative Traversals
+### Iterative Traversals
 Traversals can also be implemented using stack/queue instead of recursion. (See advanced section for code.)
 
 ---
 
 ## 2. Height of a Binary Tree
-**Definition:** Height = length of the longest path from root to any leaf node.
+The height of a binary tree is the length of the longest path from the root to any leaf node.
 
-**C# Code:**
+**C# Implementation:**
 ```csharp
 int Height(TreeNode root)
 {
@@ -78,15 +87,16 @@ int Height(TreeNode root)
     int rightH = Height(root.right);
     return Math.Max(leftH, rightH) + 1;
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
 
 ---
 
 ## 3. Search in a Binary Tree
-**Problem:** Given a value n, check if it exists in the tree.
+Check if a given value exists in the binary tree.
 
-**C# Code:**
+**C# Implementation:**
 ```csharp
 bool Search(TreeNode root, int key)
 {
@@ -94,15 +104,16 @@ bool Search(TreeNode root, int key)
     if (root.data == key) return true;
     return Search(root.left, key) || Search(root.right, key);
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
 
 ---
 
 ## 4. Check Identical Trees
-**Definition:** Two binary trees are identical if they have the same structure and node values.
+Two binary trees are identical if they have the same structure and node values.
 
-**C# Code:**
+**C# Implementation:**
 ```csharp
 bool IsIdentical(TreeNode root1, TreeNode root2)
 {
@@ -111,15 +122,16 @@ bool IsIdentical(TreeNode root1, TreeNode root2)
     if (root1.data != root2.data) return false;
     return IsIdentical(root1.left, root2.left) && IsIdentical(root1.right, root2.right);
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
 
 ---
 
 ## 5. Check Mirror Trees
-**Definition:** Two binary trees are mirror images if root nodes have equal values and left subtree of one is mirror of right subtree of the other.
+Two binary trees are mirror images if their root nodes have equal values and the left subtree of one is the mirror of the right subtree of the other.
 
-**C# Code:**
+**C# Implementation:**
 ```csharp
 bool IsMirror(TreeNode root1, TreeNode root2)
 {
@@ -128,5 +140,6 @@ bool IsMirror(TreeNode root1, TreeNode root2)
     if (root1.data != root2.data) return false;
     return IsMirror(root1.left, root2.right) && IsMirror(root1.right, root2.left);
 }
-// Time: O(N), Space: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 ```
