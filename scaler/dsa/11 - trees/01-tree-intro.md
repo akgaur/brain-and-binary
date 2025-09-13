@@ -85,21 +85,46 @@
 
   ## **5\. Tree Traversals**
 
-39. **Preorder (Root → Left → Right)**  
-     Example Output: `1 2 4 5 3 6 7`
+### Preorder (Root → Left → Right)
+Example Output: `1 2 4 5 3 6 7`
 
-     `void preorder(TreeNode node) {`  
-40.     `if (node == null) return;`  
-41.     `System.out.print(node.data + " ");`  
-42.     `preorder(node.left);`  
-43.     `preorder(node.right);`  
-44. `}`  
-1.   
-2. **Inorder (Left → Root → Right)**  
-    Example Output: `4 2 5 1 6 3 7`
+**C# Code:**
+```csharp
+void Preorder(TreeNode node)
+{
+    if (node == null) return;
+    Console.Write(node.data + " ");
+    Preorder(node.left);
+    Preorder(node.right);
+}
+```
 
-3. **Postorder (Left → Right → Root)**  
-    Example Output: `4 5 2 6 7 3 1`  
-45. 
+### Inorder (Left → Root → Right)
+Example Output: `4 2 5 1 6 3 7`
+
+**C# Code:**
+```csharp
+void Inorder(TreeNode node)
+{
+    if (node == null) return;
+    Inorder(node.left);
+    Console.Write(node.data + " ");
+    Inorder(node.right);
+}
+```
+
+### Postorder (Left → Right → Root)
+Example Output: `4 5 2 6 7 3 1`
+
+**C# Code:**
+```csharp
+void Postorder(TreeNode node)
+{
+    if (node == null) return;
+    Postorder(node.left);
+    Postorder(node.right);
+    Console.Write(node.data + " ");
+}
+```
 
 
