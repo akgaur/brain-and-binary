@@ -13,7 +13,6 @@ Array: [2, 1, 4]
 - Remove 4 → cost = 2+1+4 = 7
 - Remove 1 → cost = 4+1 = 5
 - Remove 4 → cost = 4
-Example:
 ```
 if arrray is a,b,c,d then cost to remove all element
 => a+b+c+d
@@ -23,9 +22,9 @@ b+C+d
 
 Index=> 0,1,2,3
 Array=> a,b,c,d
-```
 
 === > a*(0+1) + b*(1+1) + b*(2+1) + b*(3+1)
+```
 
 ### 💡 Solution:
 Sort the array in increasing order and remove elements one by one, accumulating the cost.
