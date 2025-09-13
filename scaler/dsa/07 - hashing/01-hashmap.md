@@ -20,29 +20,31 @@ A hashmap is a data structure for key-value storage, providing fast lookup, inse
 
 ---
 
-## Question 1: Count Distinct Elements in Array
-Given an array of n elements, count the number of distinct elements.
+## Question 1: How many distinct elements exist in the array?
 
-### 💡 Solution 1: Using Hashmap
-Manually store each element in a dictionary and count unique keys.
+### Solution 1: Hashmap Frequency
+Count frequency of each element, then count unique keys.
 
 **C# Code:**
 ```csharp
-public int CountDistinct(int[] arr)
+public int CountDistinctHashmap(int[] arr)
 {
-    Dictionary<int, bool> map = new Dictionary<int, bool>();
+    Dictionary<int, int> freq = new Dictionary<int, int>();
     for (int i = 0; i < arr.Length; i++)
     {
-        if (!map.ContainsKey(arr[i]))
-            map[arr[i]] = true;
+        if (!freq.ContainsKey(arr[i])) freq[arr[i]] = 0;
+        freq[arr[i]]++;
     }
-    return map.Count;
+    int count = 0;
+    foreach (var kv in freq)
+        count++;
+    return count;
 }
 // Time: O(n), Space: O(n)
 ```
 
-### 💡 Solution 2: Using Set
-Manually implement a set using a dictionary.
+### Solution 2: Manual Set
+Add all elements to a dictionary acting as a set.
 
 **C# Code:**
 ```csharp
@@ -56,9 +58,12 @@ public int CountDistinctSet(int[] arr)
 // Time: O(n), Space: O(n)
 ```
 
+**Which is better?**
+Both are O(n) and use extra space. The set approach is simpler if only distinct count is needed.
+
 ---
 
-## Question 2: Count Unique Elements (Frequency = 1)
+## Question 2: How many elements exist in array are uniquely existing?
 Count elements that appear exactly once.
 
 **C# Code:**
@@ -81,7 +86,7 @@ public int CountUnique(int[] arr)
 
 ---
 
-## Question 3: Sum of ASCII Values of a String
+## Question 3: Sum of ASCII values of a string
 Given a string, find the sum of its ASCII values.
 
 **C# Code:**
@@ -98,7 +103,7 @@ public int AsciiSum(string s)
 
 ---
 
-## Question 4: Cache Repeated Query Results (DP/Hashmap)
+## Question 4: Cache repeated query results (DP/Hashmap)
 Given repeated queries for ASCII sum, cache results to avoid recalculation.
 
 **C# Code:**
@@ -115,9 +120,12 @@ public int CachedAsciiSum(string s, Dictionary<string, int> cache)
 // Time: O(n) per new query, O(1) for cached, Space: O(q) for q queries
 ```
 
+**Which is better?**
+Use caching if queries repeat often; otherwise, simple loop is sufficient.
+
 ---
 
-## Question 5: First Non-Repeating Element in Array
+## Question 5: First non-repeating element in array
 Find the first element in the array that does not repeat.
 
 **C# Code:**
@@ -139,11 +147,11 @@ public int? FirstNonRepeating(int[] arr)
 
 ---
 
-## Question 6: Subarray with Sum Zero
-Check if there exists a subarray whose sum is zero.
+## Question 6: Check if there exists a subarray whose sum is 0
+Use prefix sum and hashmap to detect duplicate prefix sums.
 
-### 💡 Solution:
-Use prefix sum and a set (dictionary) to detect duplicates.
+**Explanation:**
+If any prefix sum repeats, the subarray between those indices sums to zero.
 
 **C# Code:**
 ```csharp
@@ -168,9 +176,27 @@ public bool HasZeroSumSubarray(int[] arr)
 ## Question 7: Two Sum
 Given an array, find if any two elements sum to a given value k.
 
+### Solution 1: Brute Force
+Check all pairs.
+
 **C# Code:**
 ```csharp
-public bool HasTwoSum(int[] arr, int k)
+public bool HasTwoSumBrute(int[] arr, int k)
+{
+    for (int i = 0; i < arr.Length; i++)
+        for (int j = i + 1; j < arr.Length; j++)
+            if (arr[i] + arr[j] == k) return true;
+    return false;
+}
+// Time: O(n^2), Space: O(1)
+```
+
+### Solution 2: Hashmap
+Store seen elements and check for complement.
+
+**C# Code:**
+```csharp
+public bool HasTwoSumHash(int[] arr, int k)
 {
     Dictionary<int, bool> seen = new Dictionary<int, bool>();
     for (int i = 0; i < arr.Length; i++)
@@ -183,4 +209,7 @@ public bool HasTwoSum(int[] arr, int k)
 }
 // Time: O(n), Space: O(n)
 ```
+
+**Which is better?**
+Hashmap approach is optimal for time, brute-force is only for small arrays or interview demonstration.
 
