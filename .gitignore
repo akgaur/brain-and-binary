@@ -1,0 +1,5 @@
+# Ignore all PDFs so heavy files are not pushed
+*.pdf
+**/pdfs/
+**/pdf/
+**/*-pdf/
