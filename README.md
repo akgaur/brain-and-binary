@@ -1,4 +1,13 @@
-Coding Rules:
+## 📂 PDF Notes (Google Drive)
+
+The source PDFs are not stored in this repo (they are ignored to keep it lightweight).
+Access them here: [PDF Notes Drive Folder](https://drive.google.com/drive/folders/1SxfYpZs8lWNkHi2R2ItlPGb33g2ezrxm?usp=sharing)
+
+> **Note:** The folder is access-restricted. Request access permission to view the PDFs.
+
+---
+
+## Coding Rules:
 
 - All documents must follow a consistent format for sections, questions, and code.
 - Do not use built-in algorithmic functions (e.g., Sort, Distinct, GroupBy) unless explicitly allowed in the question.
