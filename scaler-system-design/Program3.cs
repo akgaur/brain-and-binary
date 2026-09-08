@@ -1,6 +1,6 @@
 using System;
 
-namespace scaler_system_design
+namespace ScalerSystemDesign
 {
     public class Program3
     {
