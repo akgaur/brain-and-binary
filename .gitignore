@@ -3,3 +3,19 @@
 **/pdfs/
 **/pdf/
 **/*-pdf/
+
+# Build output
+**/bin/
+**/obj/
+
+# IDE / editor
+.vs/
+.vscode/
+
+# Temp files
+*.tmp
+*.temp
+*.log
+*.bak
+*.cache
+*~
